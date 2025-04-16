@@ -1,8 +1,10 @@
 import os
-import time
+import sys
+import subprocess
 
 try:
-    os.system("start cmd /k streamlit run app.py")
+    subprocess.Popen([sys.executable, "-m", "streamlit", "run", "app.py"])
 except Exception as e:
-    print("Failed to launch Streamlit:", e)
+    import time
+    print("Error launching app:", e)
     time.sleep(10)
