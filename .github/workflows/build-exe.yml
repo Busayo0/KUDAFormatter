@@ -10,23 +10,23 @@ jobs:
     runs-on: windows-latest
 
     steps:
-    - name: Checkout repository
+    - name: 🛒 Checkout repo
       uses: actions/checkout@v3
 
-    - name: Set up Python
+    - name: 🐍 Set up Python
       uses: actions/setup-python@v5
       with:
         python-version: '3.10'
 
-    - name: Install dependencies
+    - name: 📦 Install dependencies
       run: |
         pip install -r requirements.txt
         pip install pyinstaller
 
-    - name: Build .exe file
-      run: pyinstaller --onefile --windowed --name KUDAFormatter launch.py
+    - name: 🏗️ Build EXE with PyInstaller
+      run: pyinstaller --noconsole --onefile --name KUDAFormatter launch.py
 
-    - name: Upload EXE
+    - name: 📤 Upload compiled EXE
       uses: actions/upload-artifact@v4
       with:
         name: KUDAFormatter-EXE
