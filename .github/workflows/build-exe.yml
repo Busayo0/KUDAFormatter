@@ -27,7 +27,7 @@ jobs:
       run: pyinstaller --onefile --windowed --name KUDAFormatter launch.py
 
     - name: Upload EXE
-      uses: actions/upload-artifact@v3
+      uses: actions/upload-artifact@v2
       with:
         name: KUDAFormatter-EXE
         path: dist/KUDAFormatter.exe
