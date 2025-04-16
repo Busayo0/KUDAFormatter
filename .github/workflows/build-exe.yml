@@ -23,11 +23,11 @@ jobs:
         pip install -r requirements.txt
         pip install pyinstaller
 
-    - name: Build EXE
+    - name: Build .exe file
       run: pyinstaller --onefile --windowed --name KUDAFormatter launch.py
 
     - name: Upload EXE
-     uses: actions/upload-artifact@main
-    with:
-  name: KUDAFormatter-EXE
-  path: dist/KUDAFormatter.exe
+      uses: actions/upload-artifact@v4
+      with:
+        name: KUDAFormatter-EXE
+        path: dist/KUDAFormatter.exe
